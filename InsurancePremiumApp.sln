@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156 d17.13
+VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceApp", "InsuranceApp\InsuranceApp.csproj", "{6790BA2A-27E2-4D18-BBEF-84060A13DF77}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceApp.Tests", "InsuranceApp.Tests\InsuranceApp.Tests.csproj", "{0B350577-949E-40EF-B478-89B1CEA90F41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceApp.UITests", "InsuranceApp.UITests\InsuranceApp.UITests.csproj", "{5A42CE20-4945-48EA-8973-A4D69ED807DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{0B350577-949E-40EF-B478-89B1CEA90F41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B350577-949E-40EF-B478-89B1CEA90F41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B350577-949E-40EF-B478-89B1CEA90F41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A42CE20-4945-48EA-8973-A4D69ED807DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A42CE20-4945-48EA-8973-A4D69ED807DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A42CE20-4945-48EA-8973-A4D69ED807DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A42CE20-4945-48EA-8973-A4D69ED807DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
