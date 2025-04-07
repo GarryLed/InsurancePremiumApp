@@ -1,5 +1,6 @@
 ﻿namespace InsuranceApp.WebForms
 {
+    // Implementation of the IDiscountService interface
     public class DefaultDiscountService : IDiscountService
     {
         public double GetDiscount()

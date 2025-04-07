@@ -4,23 +4,27 @@
     ViewData["Title"] = "Insurance Quote";
 }
 
-<h2>Get Insurance Quote</h2>
+<h2>Get Insurance Quote</h2> 
 
+
+<!-- Form for equipment quote -->
+<!-- Get the users age: -->
 <form method="post" class="form">
     <div class="form-group">
         <label asp-for="Age">Age:</label>
         <input asp-for="Age" class="form-control" />
         <span asp-validation-for="Age" class="text-danger"></span>
     </div>
-
+    <!-- Game mode -->
     <div class="form-group">
         <label asp-for="GameMode">Game Mode:</label>
         <select asp-for="GameMode" class="form-control">
-            <option value="casual">Casual</option>
+            <option value="casual">Casual</option> <!-- Casual gamers-->
             <option value="hardcore">Hardcore</option>
         </select>
     </div>
 
+    <!-- Submit button -->
     <button type="submit" class="btn btn-primary">Get Quote</button>
 </form>
 

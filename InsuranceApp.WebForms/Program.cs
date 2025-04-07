@@ -9,8 +9,8 @@ namespace InsuranceApp.WebForms
             // Add services to the container.
             builder.Services.AddRazorPages();
 
-            // Register your Discount Service here
-            builder.Services.AddScoped<IDiscountService, DefaultDiscountService>();
+           
+            builder.Services.AddScoped<IDiscountService, DefaultDiscountService>(); // Register the DefaultDiscountService as the implementation of IDiscountService
 
 
             var app = builder.Build();
