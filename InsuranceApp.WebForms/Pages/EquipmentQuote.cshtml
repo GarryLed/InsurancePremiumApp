@@ -1,0 +1,36 @@
+﻿@page
+@model InsuranceApp.WebForms.Pages.EquipmentQuoteModel
+@{
+    ViewData["Title"] = "Insurance Quote";
+}
+
+<h2>Get Insurance Quote</h2>
+
+<form method="post" class="form">
+    <div class="form-group">
+        <label asp-for="Age">Age:</label>
+        <input asp-for="Age" class="form-control" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GameMode">Game Mode:</label>
+        <select asp-for="GameMode" class="form-control">
+            <option value="casual">Casual</option>
+            <option value="hardcore">Hardcore</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Get Quote</button>
+</form>
+
+@if (Model.HasResult)
+{
+    <div class="mt-4 alert alert-info">
+        <strong>Your premium is:</strong> €@Model.Premium.ToString("F2")
+    </div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
