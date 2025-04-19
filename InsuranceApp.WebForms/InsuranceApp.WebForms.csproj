@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Selenium.Support" Version="4.31.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\InsuranceApp\InsuranceApp.csproj" />
   </ItemGroup>
 
