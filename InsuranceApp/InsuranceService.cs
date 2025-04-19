@@ -31,7 +31,7 @@ namespace InsuranceApp
                 }
                 else if (age >=31)
                 {
-                    premium = 2.5;
+                    premium = 3.5;
                 }
                 else
                 {
