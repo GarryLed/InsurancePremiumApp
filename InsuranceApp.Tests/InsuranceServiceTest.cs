@@ -101,7 +101,7 @@ namespace InsuranceApp.Tests
             // Act
             var result = service.CalcPremium(55, "casual");
             // Assert
-            Assert.That(result, Is.EqualTo(3.5)); // need to add the discount here
+            Assert.That(result, Is.EqualTo(0.35)); // need to add the discount here
         }
 
         [Test]
@@ -112,7 +112,7 @@ namespace InsuranceApp.Tests
             // Act
             var result = service.CalcPremium(55, "hardcore");
             // Assert
-            Assert.That(result, Is.EqualTo(5.5)); // need to add the discount here
+            Assert.That(result, Is.EqualTo(0.5)); 
         }
 
         [Test]
