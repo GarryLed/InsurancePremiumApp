@@ -30,7 +30,7 @@
 
 @if (Model.HasResult)
 {
-    <div class="mt-4 alert alert-info">
+    <div class="mt-4 alert alert-info"> <!-- This alert-info is causing two tests to fail, so I need to find out why and fix it -->
         <strong>Your premium is:</strong> €@Model.Premium.ToString("F2")
     </div>
 }
