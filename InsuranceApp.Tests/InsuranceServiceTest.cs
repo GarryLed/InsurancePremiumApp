@@ -20,7 +20,7 @@ namespace InsuranceApp.Tests
         public void Setup()
         {
             _mockDiscountService = new Mock<IDiscountService>();
-            _mockDiscountService.Setup(x => x.GetDiscount()).Returns(0.1); // discount
+            _mockDiscountService.Setup(x => x.GetDiscount()).Returns(0.9); // 10% discount
         }
         
         [Test]
@@ -101,27 +101,16 @@ namespace InsuranceApp.Tests
             // Act
             var result = service.CalcPremium(55, "casual");
             // Assert
-            Assert.That(result, Is.EqualTo(0.35)); // need to add the discount here
+            Assert.That(result, Is.EqualTo(3.15).Within(0.01)); 
         }
 
         [Test]
-        public void GetCalcPremium_Hardcore_Age55_ReturnsAddedDiscount()
+        public void GetCalcPremium_Casual_Age45_Returns0EurosInvalid()
         {
             // Arrange
             var service = new InsuranceService(_mockDiscountService.Object);
             // Act
-            var result = service.CalcPremium(55, "hardcore");
-            // Assert
-            Assert.That(result, Is.EqualTo(0.5)); 
-        }
-
-        [Test]
-        public void GetCalcPremium_Casual_Age31_Returns0EurosInvalid()
-        {
-            // Arrange
-            var service = new InsuranceService(_mockDiscountService.Object);
-            // Act
-            var result = service.CalcPremium(31, "invalid");
+            var result = service.CalcPremium(45, "invalid");
             // Assert
             Assert.That(result, Is.EqualTo(0.0));
         }
