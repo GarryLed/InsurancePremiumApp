@@ -65,8 +65,7 @@ namespace InsuranceApp
             if (age >= 50)
             {
                 premium *= _discountService.GetDiscount();
-                Console.WriteLine($"Base premium: {premium}");
-                Console.WriteLine($"Discount multiplier: {_discountService.GetDiscount()}");
+                
 
             }
 

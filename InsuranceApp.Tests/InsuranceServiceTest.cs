@@ -105,7 +105,7 @@ namespace InsuranceApp.Tests
         }
 
         [Test]
-        public void GetCalcPremium_Casual_Age45_Returns0EurosInvalid()
+        public void GetCalcPremium_Invalid_Returns0Euros()
         {
             // Arrange
             var service = new InsuranceService(_mockDiscountService.Object);
@@ -114,10 +114,6 @@ namespace InsuranceApp.Tests
             // Assert
             Assert.That(result, Is.EqualTo(0.0));
         }
-
-       
-
-
     }
         
 }

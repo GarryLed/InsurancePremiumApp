@@ -22,7 +22,7 @@ namespace InsuranceApp.UITests
             driver.Navigate().GoToUrl("http://localhost:5064/EquipmentQuote"); 
         }
 
-        // Define test cases from black-box test analysis
+        // The test cases from black-box test analysis
         public static IEnumerable<TestCaseData> BlackBoxTestCases()
         {
             yield return new TestCaseData("21", "casual", "€5.00").SetName("TC1_Casual_Age21_Premium5");
@@ -41,23 +41,24 @@ namespace InsuranceApp.UITests
         [Test, TestCaseSource(nameof(BlackBoxTestCases))]
         public void CalculatePremium_BlackBoxTests(string age, string gameMode, string expectedResult)
         {
-            // ARRANGE
-            driver.FindElement(By.Id("Age")).Clear();
-            driver.FindElement(By.Id("Age")).SendKeys(age);
+            // Arrange
+            driver.FindElement(By.Id("Age")).Clear(); // find the input field by ID "Age" and clear it 
+            driver.FindElement(By.Id("Age")).SendKeys(age); // send the age value to the input field
 
-            var dropdown = new SelectElement(driver.FindElement(By.Id("GameMode")));
+            var dropdown = new SelectElement(driver.FindElement(By.Id("GameMode"))); // find the dropdown element by id  "GameMode"
+
             if (gameMode == "casual" || gameMode == "hardcore")
             {
-                dropdown.SelectByValue(gameMode);
+                dropdown.SelectByValue(gameMode); // select the value from the dropdown
             }
             else
             {
-                // Inject invalid gamemode via JavaScript
+                // Inject invalid gamemode via JavaScript (used for testing invalid gamemode) 
                 ((IJavaScriptExecutor)driver).ExecuteScript(
-                    $"document.getElementById('GameMode').value = '{gameMode}';");
+                    $"document.getElementById('GameMode').value = '{gameMode}';"); // this prevents the program from crashing if the gamemode is invalid
             }
 
-            // ACT
+            // Act
             driver.FindElement(By.CssSelector("button[type='submit']")).Click();
 
             // Use WebDriverWait to avoid NoSuchElementException
@@ -74,7 +75,7 @@ namespace InsuranceApp.UITests
                 result = "€0.00";
             }
 
-            // ASSERT
+            // Assert 
             Assert.That(result, Does.Contain(expectedResult),
                 $"Expected: {expectedResult}, but got: {result}");
         }
