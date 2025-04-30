@@ -29,7 +29,7 @@ namespace InsuranceApp
                 {
                     premium = 5.0;
                 }
-                else if (age >=31)
+                else if (age >= 31)
                 {
                     premium = 3.5;
                 }
@@ -64,7 +64,10 @@ namespace InsuranceApp
             // instead of creating a new instance of the discount service within the insurance service class
             if (age >= 50)
             {
-                premium *= _discountService.GetDiscount(); 
+                premium *= _discountService.GetDiscount();
+                Console.WriteLine($"Base premium: {premium}");
+                Console.WriteLine($"Discount multiplier: {_discountService.GetDiscount()}");
+
             }
 
             return premium; 

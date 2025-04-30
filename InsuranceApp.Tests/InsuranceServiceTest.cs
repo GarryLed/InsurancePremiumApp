@@ -101,7 +101,7 @@ namespace InsuranceApp.Tests
             // Act
             var result = service.CalcPremium(55, "casual");
             // Assert
-            Assert.That(result, Is.EqualTo(3.15).Within(0.01)); 
+            Assert.That(result, Is.EqualTo(3.15).Within(0.01)); //Within(0.01) allows for floating point precision issues which were causing the tests to fial without it 
         }
 
         [Test]
